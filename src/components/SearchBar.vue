@@ -23,7 +23,7 @@ export default {
 
     <div class="form">
 
-        <input type="text" class="searchClass search-bar" id="search-character" v-model="store.searchText"
+        <input type="text" class="searchClass search-bar" id="search-character" v-model="store.searchQuery"
             placeholder="Search by NAME">
 
         <button type="submit" class="btn src" @click.prevent="$emit('search')">

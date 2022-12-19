@@ -13,7 +13,7 @@ export default{
 
     <div class="container">
 
-        <NavBar/>
+        <NavBar />
 
 
     </div>
@@ -25,11 +25,12 @@ export default{
 
 .container{
     width: 100%;
-    background-color: #0a0a0ab7;
+    background-color: #0a0a0af4;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    z-index: 10000;
 }
 
 

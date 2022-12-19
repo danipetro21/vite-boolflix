@@ -1,8 +1,10 @@
 <script>
 import SearchBar from './SearchBar.vue';
-
+import App from '../App.vue';
 export default{
-    components: { SearchBar }
+    components: { 
+        SearchBar,
+    }
 }
 </script>
 
@@ -15,7 +17,7 @@ export default{
         </div>
 
         <div class="search-container">
-            <SearchBar/>
+            <SearchBar @search="getApi"/>
         </div>
 
     </nav>
@@ -31,6 +33,7 @@ nav{
     max-width: 1500px;
     margin: 0 auto;
     padding: 30px;
+
 }
 
 .logo{
