@@ -1,5 +1,5 @@
 @use './partials/_variables.scss' as *;
-
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -9,4 +9,5 @@
 
 body{
     background-color: $bg_primary;
+    font-family: 'Bebas Neue', cursive;
 }

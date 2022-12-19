@@ -19,14 +19,29 @@ export default {
 <template>
 
     <div class="container">
-        
 
-        <div class="box_card">
+        <h1>LATEST FILM</h1>
+        <div class="box_card latest">
 
-            <Card v-for="(movie, index) in store.movieList" :result="movie"/>
-
+            <Card v-for="(movie, index) in store.movieLatest.slice(0, 5)" :result="movie"/>
 
         </div>
+        
+        <h1>TOP RATED FILM</h1>
+        <div class="box_card top_rated">
+            
+            <Card v-for="(movie, index) in store.movieTopList.slice(0, 5)" :result="movie"/>
+
+        </div>
+
+        <h1>UPCOMING FILM</h1>
+        <div class="box_card upcoming">
+
+            <Card v-for="(movie, index) in store.movieUpCoList.slice(0, 5)" :result="movie"/>
+
+        </div>
+
+
 
     </div>
 
@@ -48,6 +63,18 @@ export default {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+
+
+
 }
 
+h1{
+        background-color: $netflix_Red;
+        width: 200px;
+        text-align: center;
+        padding: 10px;
+        color: white;
+
+        margin-left: 10px;
+    }
 </style>
