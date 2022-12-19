@@ -1,11 +1,36 @@
 <script>
+import NavBar from './NavBar.vue';
 
+export default{
+    component: {
+        NavBar
+    },
+    components: { NavBar }
+}
 </script>
 
 <template>
- <h1>ciapo</h1>
+
+    <div class="container">
+
+        <NavBar/>
+
+
+    </div>
+
 </template>
 
 <style lang="scss" scoped>
+@use '../style/general.scss';
+
+.container{
+    width: 100%;
+    background-color: #0a0a0ab7;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
 
 </style>

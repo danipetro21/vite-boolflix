@@ -1,8 +1,11 @@
+
 <script>
 import AppHeader from './components/AppHeader.vue';
 import { store } from './store.js'
 
+
 export default{
+  
   components: {
     AppHeader
   },
@@ -11,11 +14,14 @@ export default{
       store
     }
   },
+ mounted(){
+  console.log(store.API_KEY);
+ }
 }
 </script>
 
 <template>
-  <AppHeader/>
+  <AppHeader />
 
   <main>
 
@@ -24,6 +30,7 @@ export default{
 
 </template>
 
-<style scoped>
-
+<style lang="scss">
+@use './style/general.scss';
 </style>
+
