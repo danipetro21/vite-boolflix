@@ -14,36 +14,46 @@ export default {
     },
 }
 
+
 </script>
 
 <template>
 
-    <div class="container">
+    <div class="container" :class="store.visibility === true ? 'none' : 'active'">
 
         <h1>LATEST FILM</h1>
         <div class="box_card latest">
 
-            <Card v-for="(movie, index) in store.movieLatest.slice(0, 5)" :result="movie"/>
+            <Card v-for="(movie, index) in store.movieLatest.slice(0, 5)" :result="movie" />
 
         </div>
-        
+
         <h1>TOP RATED FILM</h1>
         <div class="box_card top_rated">
-            
-            <Card v-for="(movie, index) in store.movieTopList.slice(0, 5)" :result="movie"/>
+
+            <Card v-for="(movie, index) in store.movieTopList.slice(0, 5)" :result="movie" />
 
         </div>
 
         <h1>UPCOMING FILM</h1>
         <div class="box_card upcoming">
 
-            <Card v-for="(movie, index) in store.movieUpCoList.slice(0, 5)" :result="movie"/>
+            <Card v-for="(movie, index) in store.movieUpCoList.slice(0, 5)" :result="movie" />
 
         </div>
-
-
-
     </div>
+
+
+    <div class="ricerca" :class="store.visibility === true ? 'active' : 'none'"> 
+
+        <h1>RISULTATI RICERCA:</h1>
+        <div class="box_card ">
+
+            <Card v-for="(movie, index) in store.queryResuls" :result="movie" />
+
+        </div>
+    </div>
+
 
 </template>
 
@@ -55,7 +65,7 @@ export default {
     position: relative;
     top: 150px;
     max-width: 1500px;
-
+    display: block;
 }
 
 .box_card {
@@ -68,13 +78,30 @@ export default {
 
 }
 
-h1{
-        background-color: $netflix_Red;
-        width: 200px;
-        text-align: center;
-        padding: 10px;
-        color: white;
+h1 {
+    background-color: $netflix_Red;
+    width: 200px;
+    text-align: center;
+    padding: 10px;
+    color: white;
 
-        margin-left: 10px;
-    }
+    margin-left: 10px;
+}
+
+.ricerca {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: absolute;
+    top: 200px;
+    right: 0;
+    left: 0;
+}
+
+.active {
+    display: block;
+}
+
+.none {
+    display: none;
+}
 </style>

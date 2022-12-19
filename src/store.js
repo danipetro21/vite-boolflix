@@ -11,9 +11,11 @@ export const store = reactive ({
     movieLatest: [],
     movieUpCoList: [],
     seriesList: [],
+    queryResuls: [],
     topRated: 'top_rated',
-    searchQuery : '',
+    searchQuery : null,
     search : 'search',
     now : 'now_playing',
-    upcoming : 'upcoming'
+    upcoming : 'upcoming',
+    visibility : false
 })
