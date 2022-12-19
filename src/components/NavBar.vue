@@ -15,6 +15,7 @@ export default {
         },
 
         resetSearch() {
+            store.searchQuery = null;
             store.visibility = false;
 
         }
