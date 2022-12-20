@@ -9,7 +9,7 @@ export default {
         }
     },
     methods: {
-        search(){
+        search() {
             this.$emit('search');
             store.visibility = true;
         },
@@ -31,15 +31,19 @@ export default {
                 <img src="logo.png" alt="">
             </div>
 
+
+
             <div class="form">
 
                 <input type="text" class="searchClass search-bar" id="search-character" v-model="store.searchQuery"
                     placeholder="Search by NAME">
-
                 <button type="submit" class="btn src" @click.prevent="search()">
-                    SEARCH
+                    <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
-                <button type="submit" class="btn rst" @click.prevent="resetSearch()">RESET</button>
+
+                <button type="submit" class="btn rst" @click.prevent="resetSearch()"><i
+                        class="fa-solid fa-x"></i></button>
+
             </div>
 
         </nav>
@@ -64,6 +68,7 @@ nav {
     display: flex;
     width: 100%;
     justify-content: space-between;
+    flex-direction: row;
     align-items: center;
     max-width: 1500px;
     margin: 0 auto;
@@ -72,7 +77,6 @@ nav {
 }
 
 .logo {
-
     width: 200px;
 
     img {
@@ -80,32 +84,58 @@ nav {
     }
 }
 
+.form {
+    position: relative;
+    width: 1000px;
+}
 
 
 .searchClass {
     padding: 15px;
-    border-radius: 15px;
     border: none;
 }
 
 .search-bar {
     background-color: $bg_secondary;
     margin-left: 10px;
+    border: 0.4px solid rgba(255, 255, 255, 0.324);
+    width: 100%;
+    padding: 15px;
+    line-height: 1;
+    box-sizing: border-box;
+    outline: none;
+    display: flex;
+    justify-content: space-between;
 }
 
 .btn {
-    margin: 0 10px;
-    padding: 10px;
-    border: transparent;
-    border-radius: 10px;
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    border: 0;
+    color: #fff;
+    background-color: transparent;
+    outline: none;
+    margin: 0;
+    padding: 0 10px;
+    z-index: 2;
     cursor: pointer;
 }
 
+::placeholder {
+
+    font-size: 1em;
+    color: mintcream;
+    margin-right: 20px;
+}
+
 .src {
-    background-color: rgb(26, 155, 26);
+    // background-color: rgb(26, 155, 26);
+    right: 20px;
 }
 
 .rst {
-    background-color: rgb(207, 31, 31);
+    // background-color: rgb(207, 31, 31);
+    right: 0;
 }
 </style>

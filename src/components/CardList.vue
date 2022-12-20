@@ -46,11 +46,13 @@ export default {
 
     <div class="ricerca" :class="store.visibility === true ? 'active' : 'none'"> 
 
-        <h1>RISULTATI RICERCA:</h1>
-        <div class="box_card ">
+        <h1>RISULTATI RICERCA: {{ store.queryResuls.length }}</h1>
+        <div class="box_card">
+
+            <h1 class="noResult" v-if="store.queryResuls.length == 0">SPIACENTI LA TUA RICERCA NON HA PRODOTTO RISULTATI</h1>
 
             <Card v-for="(movie, index) in store.queryResuls" :result="movie" />
-
+           
         </div>
     </div>
 
@@ -73,8 +75,13 @@ export default {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+}
 
-
+.noResult{
+    width: 500px;
+    font-size: 3rem;
+    background-color: transparent;
+    margin: 100px auto;
 
 }
 
